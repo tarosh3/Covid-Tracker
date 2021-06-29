@@ -1,38 +1,207 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Tracker {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  overflow: scroll;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+.dark {
+  background-color: #222831;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  background-color: #f5f6fa;
+}
+
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.app__left {
+  flex: 0.85;
+}
+
+.app__right {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  margin: 15px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+h1 {
+  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #100f10;
+  font-size: 5vw;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.3vw #f7f7fe;
+}
+h1::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: auto;
+  color: #37b9f1;
+  overflow: hidden;
+  position: absolute;
+  content: attr(data-text);
+  border-right: 2px solid #37b9f1;
+  -webkit-text-stroke: 0vw #f7f7fe;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Live {
+  margin-left: 20px;
+  margin-top: 2vh;
+  color: #f55c47;
+  animation: blinker 1.5s linear infinite;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #f55c47;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.app__dropdown {
+  background-color: #37b9f1;
+  box-shadow: 0 0 20px #bac3c3;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 10px;
+}
+
+.menu__item {
+  background-color: #37b9f1;
+}
+
+.app__stats {
+  display: flex;
+  margin: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  transition: all 0.4 linear;
+}
+.case__btn {
+  display: flex;
+  flex: 1;
+  margin: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  transition: all 0.4 linear;
+}
+.button3 {
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 15px;
+  color: black;
+  background-color: #37b9f1;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #37b9f1;
+  transition: ease-out 0.5s;
+  font-size: 2rem;
+  font-family: "Staatliches", cursive;
+  outline: none;
+  letter-spacing: 4px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.button3.Yellow:hover {
+  box-shadow: inset 0 100px 0 0 #f5a962;
+  cursor: pointer;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.button3.Green:hover {
+  box-shadow: inset 0 100px 0 0 #66de93;
+  cursor: pointer;
+  color: white;
+}
+.button3.Red:hover {
+  box-shadow: inset 0 100px 0 0 #ff616d;
+  cursor: pointer;
+  color: white;
+}
+h3 {
+  font-family: "Pacifico", cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app__right h3 {
+  background-color: #3c8dad;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+
+  opacity: 0.9;
+  box-shadow: 0 0 20px #bac3c3;
+  animation: change-background 4s ease infinite;
+}
+
+@keyframes change-background {
+  0% {
+    background: #3c8dad;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    background: #39a6a3;
+  }
+  50% {
+    background: #39a2db;
+  }
+  75% {
+    background: #00ead3;
+  }
+  90% {
+    background: #3edbf0;
+  }
+  90% {
+    background: #3c8dad;
+  }
+}
+
+@media (max-width: 1300px) {
+  .app {
+    flex-direction: column;
+  }
+  .case__btn {
+    height: auto;
+    text-align: center;
+  }
+  .app__stats {
+    height: auto;
   }
 }

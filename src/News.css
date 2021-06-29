@@ -1,0 +1,62 @@
+.News {
+  
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  margin-top: 20px;
+  overflow: scroll;
+  height: 400px;
+  color: #6a5d5d;
+  overflow-x: hidden;
+  flex: 1 1 500px;
+  margin: 10px;
+  align-items: center;
+}
+.news_box {
+  padding: 4px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #132c33;
+  background: #fdfaf6;
+  border-radius: 2px;
+  display: inline-block;
+  height: auto;
+  margin: 1rem 0 1rem 1rem;
+  position: relative;
+  width: 90%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.news_box:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.news_time {
+  font-size: 15px;
+  font-weight: lighter;
+  color: #343a40;
+}
+
+#style-5::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#style-5::-webkit-scrollbar {
+  width: 20px;
+  height: 30px;
+}
+#style-5::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    0deg,
+    rgb(42, 159, 238) 0%,
+    rgb(29, 67, 150) 50%,
+    rgba(47, 189, 236, 1) 100%
+  );
+
+  border-radius: 5px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+#style-5::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
