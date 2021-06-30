@@ -6,6 +6,7 @@ import {
   Card,
   CardContent,
   makeStyles,
+  InputLabel,
 } from "@material-ui/core";
 import InfoBox from "./InfoBox";
 // import Map from "./Map";
@@ -19,7 +20,7 @@ import Temp from "./Temp";
 
 const useStyles = makeStyles({
   root: {
-    background: "#37b9f1",
+    background: "#B5EAEA",
 
     border: 0,
     color: "black",
@@ -108,13 +109,19 @@ function App() {
               </h3>
             </div>
 
-            <FormControl className="app__dropdown">
+            <FormControl className="app__dropdown" variant="outlined">
+              <InputLabel>
+                <h4 className="menu_name">Select State</h4>
+              </InputLabel>
               <Select
-                variant="outlined"
+                className="select_state"
                 onChange={onCountryChange}
-                value={State}
-                defaultValue="Total"
+                value={stateInfo.state}
+                label="Select State"
               >
+                <MenuItem className="first_menu" value="" disabled>
+                  Select State
+                </MenuItem>
                 {States.map((State) => (
                   <MenuItem
                     classes={{

@@ -97,6 +97,13 @@ h1::before {
     opacity: 0;
   }
 }
+.menu_name {
+  text-align: center;
+  color: #0a1931;
+}
+.select_state {
+  min-width: 150px;
+}
 
 .app__dropdown {
   background-color: #37b9f1;
@@ -118,7 +125,7 @@ h1::before {
 }
 .case__btn {
   display: flex;
-  flex: 1;
+  flex: 1 1 159px;
   margin: 30px;
   justify-content: space-around;
   flex-wrap: wrap;
