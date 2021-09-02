@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 
 function App() {
   const [States, setStates] = useState([]);
-  const [State, setState] = useState("Total");
+  const [, setState] = useState("Total");
   const [stateInfo, setStateInfo] = useState({});
   const [tableData, setTableData] = useState([]);
   const [but, setBut] = useState(1);
@@ -50,7 +50,7 @@ function App() {
   // };
 
   useEffect(() => {
-    fetch("https://api.covid19india.org/data.json")
+    fetch("https://data.covid19india.org/data.json")
       .then((response) => response.json())
       .then((data) => {
         const temp = data.statewise;
@@ -60,7 +60,7 @@ function App() {
 
   useEffect(() => {
     const getCountriesData = async () => {
-      await fetch("https://api.covid19india.org/data.json")
+      await fetch("https://data.covid19india.org/data.json")
         .then((response) => response.json())
         .then((data) => {
           const temp = data.statewise;
@@ -81,7 +81,7 @@ function App() {
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
 
-    const url = "https://api.covid19india.org/data.json";
+    const url = "https://data.covid19india.org/data.json";
 
     await fetch(url)
       .then((response) => response.json())
@@ -105,7 +105,7 @@ function App() {
             <div>
               <h1 data-text="C‎‎ovid19...">Covid19...</h1>
               <h3 className="Live">
-                Live <span class="dot"></span>{" "}
+                Live <span className="dot"></span>{" "}
               </h3>
             </div>
 

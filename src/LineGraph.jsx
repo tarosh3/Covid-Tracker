@@ -5,7 +5,7 @@ function LineGraph({ flag }) {
   const [caseData, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.covid19india.org/data.json")
+    fetch("https://data.covid19india.org/data.json")
       .then((response) => response.json())
       .then((data) => {
         const temp = data.cases_time_series;

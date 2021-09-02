@@ -5,7 +5,7 @@ function News() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.covid19india.org/updatelog/log.json")
+    fetch("https://data.covid19india.org/updatelog/log.json")
       .then((response) => response.json())
       .then((data) => {
         setNews(data);

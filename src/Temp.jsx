@@ -5,7 +5,7 @@ function Temp({ code, flag }) {
   const [caseData, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.covid19india.org/states_daily.json")
+    fetch("https://data.covid19india.org/states_daily.json")
       .then((response) => response.json())
       .then((data) => {
         const temp = data.states_daily;
